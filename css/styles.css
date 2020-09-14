@@ -1,0 +1,11 @@
+
+/* import fonts from fonts.css file */ 
+@import url(../fonts/fonts.css);
+
+/*  css variables */
+@import url(../partials/variables.css);
+
+
+/* mobile first approach */
+
+/* start navigation */
