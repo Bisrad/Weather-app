@@ -1,11 +1,64 @@
 
-/* import fonts from fonts.css file */ 
-@import url(../fonts/fonts.css);
-
 /*  css variables */
 @import url(../partials/variables.css);
 
+/* main card styles */
+
+h1 {
+    font-size: 3.3rem;
+}
+
+.para {
+    font-size: 1rem;
+    padding-top: 2rem;
+    color: rgb(145, 145, 145);
+}
+
+.title{
+    text-align: center;
+    padding: 5rem;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+
+/* card styles */
+
+.card {
+    min-width: 150px;
+    max-width: 100%;
+    border: none;
+    text-align: center;
+}
+
+
+.card:hover {
+    cursor: pointer;
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+
+.bg-dark {
+    background-color: teal!important;
+    margin-right: .4rem;
+    margin-bottom: .4rem;
+}
+
+
+/* Weather icons */
+
+.fa-cloud {
+    color: white;
+    font-size: 2em;
+}
 
 /* mobile first approach */
 
-/* start navigation */
