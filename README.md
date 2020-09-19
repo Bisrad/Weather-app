@@ -37,13 +37,13 @@ Utilized Bootstrap4, Jquery, Html, css
 
 ## Deployment Link
 
-<>
+<https://bisrad.github.io/Weather-app/>
 
 ## Credits:
 
--
--
+- Andrew Moses | help locating and fetching api
 
 ## Rescorces:
 
+- OpenWeather API documentation <https://openweathermap.org/>
 
