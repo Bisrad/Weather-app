@@ -38,9 +38,6 @@
     margin: auto;
 }
 
-.input {
-    text-align: center;
-}
 
 input[type="text"] {
     height: 40px;
@@ -63,25 +60,22 @@ input::placeholder {
 }
 
 input[type="submit"] {
+    cursor: pointer;
     font-size: small!important;
     text-transform: uppercase;
     text-align: center;
     color: white;
     padding: .7rem 2rem;
-    margin-left: 8px;
+    margin-left: 10px;
     background-color: #32bc8c;
     border: none;
 }
 
-.button:hover {
-    cursor: pointer;
-  }
-
-   .grow { 
+    .grow { 
     transition: all .2s ease-in-out; 
     }
     
-    .grow:hover { 
+     .grow:hover { 
     transform: scale(1.1); 
     }
 
@@ -89,7 +83,9 @@ input[type="submit"] {
 /* card styles */
 
 .card {
-    min-width: 250px;
+    min-height: 150px;
+    min-width: 150px;
+    padding: 1.5rem 0;
     border: none;
     text-align: center;
 }
@@ -112,12 +108,18 @@ input[type="submit"] {
     font-weight: bold;
 }
 
-p.desc {
+.desc {
     font-size: 1.3em;
+}
+
+.temp {
+    font-size: 3rem;
 }
 
 /* Weather icons */
 
 .icon {
-    width: 70%;
+    width: 100%;
+    padding: 0 6rem;
+    margin-bottom: 0;
 }
