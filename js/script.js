@@ -46,10 +46,16 @@ button.addEventListener("click", function() {
     main.innerHTML = nameValue;
     desc.innerHTML = descValue;
     temp.innerHTML = Math.round(tempValue)+' &degF';
+    //log inputs to console
+    console.log(main);
+    console.log(desc);
+    console.log(temp);
    
     // pull icons from openweather
     $(".icon").html("<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>");
-    })  
+    })
+    // log icon
+    console.log(iconSet)
 
     //error catch
     .catch(err => {
