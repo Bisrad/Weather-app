@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <!-- Bootstrap css file -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+    type="text/css"
+    />
+    <!-- Bootswatch Theme -->
+    <link
+    href="https://bootswatch.com/4/darkly/bootstrap.css"
+    rel="stylesheet"
+    type="text/css"
+    />
 
-    <!-- Font awesome s -->
-    <link rel="stylesheet" href="../css/all.min.css">
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <!-- css link -->
     <link rel="stylesheet" href="../css/styles.css" type="text/css">
@@ -20,75 +32,41 @@
 
     <!-- main container -->
     
-   
+    <nav
+    class="navbar navbar-expand-lg navbar-dark bg-success d-flex justify-content-center mb-3" >
+    <a class="navbar-brand" href="#index.html">Weather Dashboard</a>
 
+  </nav>
   
     <div class="title">
-        <h1>Weather Dashboard</h1>
-        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique itaque molestiae doloribus, omnis tenetur eius obcaecati nesciunt, voluptatum nobis tempore suscipit dolorem aliquam vel laborum.</p>
+        <h1 class="heading">Current City Weather<h1>
+        <p class="para">Heading outside today? Check out the weather below</p>
+        <div class="search">
+            <input type="text" class="inputValue" placeholder="enter your city">
+            <input type="submit" class="button grow">
+        </div>
     </div>
  
     <div class="container">
         <div class="row"> 
-            <div class="card">
-                <div class="card text-white bg-dark mb-3 py-4">
-                    <div class="card-header">Sunny</div>
-                    <i class="fas fa-cloud py-4"></i>
-                    <div class="card-body">
-                    <h5 class="card-title">Monday</h5>
-                    <p class="card-text">76 Degrees</p>
-                    <p class="card-text">66 Degrees</p>
+            <!-- card start -->
+                <div class="card">
+                    <div class="card text-white bg-dark mb-3">
+                        <div class="card-body">
+                        <h5 class="card-heading name">Phoenix,AZ</h5>
+                        <img src="../img/sunny.svg" alt="sunny" class="icon">
+                        <!-- <i class="icon"></i> -->
+                        <p class="desc">Clear Skies</p>
+                        <p class="temp">109° F</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card text-white bg-dark mb-3 py-4">
-                    <div class="card-header">Sunny</div>
-                    <i class="fas fa-cloud py-4"></i>
-                    <div class="card-body">
-                    <h5 class="card-title">Tuesday</h5>
-                    <p class="card-text">76 Degrees</p>
-                    <p class="card-text">66 Degrees</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card text-white bg-dark mb-3 py-4">
-                    <div class="card-header">Sunny</div>
-                    <i class="fas fa-cloud py-4"></i>
-                    <div class="card-body">
-                    <h5 class="card-title">Wednesday</h5>
-                    <p class="card-text">76 Degrees</p>
-                    <p class="card-text">66 Degrees</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card text-white bg-dark mb-3 py-4">
-                    <div class="card-header">Sunny</div>
-                    <i class="fas fa-cloud py-4"></i>
-                    <div class="card-body">
-                    <h5 class="card-title">Thursday</h5>
-                    <p class="card-text">76 Degrees</p>
-                    <p class="card-text">66 Degrees</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card text-white bg-dark mb-3 py-4">
-                    <div class="card-header">Sunny</div>
-                    <i class="fas fa-cloud py-4"></i>
-                    <div class="card-body">
-                    <h5 class="card-title">Friday</h5>
-                    <p class="card-text">76 Degrees</p>
-                    <p class="card-text">66 Degrees</p>
-                    </div>
-                </div>
-            </div>
+            <!-- card end -->
         </div>
     </div>
 
-    <!-- end main containter -->
+    <!-- end main container -->
+
 
     <!-- jquery, Bootstrap Js -->
     <script src="../js/jquery.3.5.1.js" type="text/javascript"></script>

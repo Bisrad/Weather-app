@@ -2,7 +2,7 @@
 
 This project utilizes HTML, CSS, and JS to display daily and weekily weather patterns with simplistic UI/UX
 
-![]()
+![](exmpl_weather.png)
 
 ### Author: Bisraddesign (Brad Thompson)
 
@@ -10,7 +10,7 @@ This project utilizes HTML, CSS, and JS to display daily and weekily weather pat
 
 As a developer\
 I want create a weather app\
-So that I can utilize APIs in a more accessible fashion\
+So that I can utilize APIs properly
 
 ## Acceptance Criteria:
 
@@ -45,3 +45,5 @@ Utilized Bootstrap4, Jquery, Html, css
 -
 
 ## Rescorces:
+
+
