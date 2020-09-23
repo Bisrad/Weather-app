@@ -8,7 +8,7 @@
     // use user input to fill City ID 
     const api  = {
       key: "64bf7a1719397bac60c5d6a0b39a4a3d",
-      base: "http://api.openweathermap.org/data/2.5/",
+      base: "https://api.openweathermap.org/data/2.5/",
       icon: "data.weather[0].com",
       img: ".png"
     }
