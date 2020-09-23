@@ -2,7 +2,7 @@
 
 This project utilizes HTML, CSS, and JS to display daily and weekily weather patterns with simplistic UI/UX
 
-![](exmpl_weather.png)
+![](example.png)
 
 ### Author: Bisraddesign (Brad Thompson)
 
@@ -46,4 +46,5 @@ Utilized Bootstrap4, Jquery, Html, css
 ## Rescorces:
 
 - OpenWeather API documentation <https://openweathermap.org/>
+
 

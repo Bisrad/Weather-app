@@ -1,6 +1,0 @@
-API Key
-'64bf7a1719397bac60c5d6a0b39a4a3d'
-
-API String
-https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&
-exclude=minutely,hourly&appid={YOUR API KEY}

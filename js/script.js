@@ -1,79 +1,109 @@
-// document load
-$(function() {
-    console.log( "ready!" );
-});
 
-// declare variables 
-var search = document.querySelector('.inputText')
-var button = document.querySelector('.button')
-var iconSet = document.querySelector('.icon')
-var main = document.querySelector('#name')
-var temp = document.querySelector('.temp')
-var desc = document.querySelector('.desc')
+// JQuery document load
+    $(document).ready(() => {
+    console.log("Loaded")
 
+    // OpenWeather API
 
-// localStorage setup 
-// Finish Local Storage setup
-      
-    let saveUserInput = '';  
-    let userValue = '';
+    // use user input to fill City ID 
+    const api  = {
+      key: "64bf7a1719397bac60c5d6a0b39a4a3d",
+      base: "http://api.openweathermap.org/data/2.5/",
+      icon: "data.weather[0].com",
+      img: ".png"
+    }
 
-    localStorage.setItem("City", saveUserInput)
-    console.log(userValue);
-
-// OpenWeather API
-
-button.addEventListener("click", function() {
-    console.log(search.value); // on click check
-    }, false);
-
-    // fix to add user input '+search.value+'
-    // expand to have 4 day forcast 
-
-    // let request = new XMLHttpRequest(); // look into this load request
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=phoenix&units=metric&appid=64bf7a1719397bac60c5d6a0b39a4a3d')
-
-    // call api and return json promises
-    .then(response => response.json())
-    .then(data => {
-    // check data pull
-    console.log(data)
-    // fill variables with data
-    var tempValue = data['main']['temp'];
-    var nameValue = data['name'];
-    var descValue = data['weather'][0]['description'];
-    // replace html
-    main.innerHTML = nameValue;
-    desc.innerHTML = descValue;
-    temp.innerHTML = Math.round(tempValue)+' &degF';
-    //log inputs to console
-    console.log(main);
-    console.log(desc);
-    console.log(temp);
    
-    // pull icons from openweather
-    $(".icon").html("<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>");
-    })
-    // log icon
-    console.log(iconSet)
+    const searchbox = document.querySelector('.search-box');
+    searchbox.addEventListener('keypress', setQuery);
+    
+    function setQuery(evt) {
+      if (evt.keyCode == 13) {
+        getResults(searchbox.value);
+      }
+    }
 
-    //error catch
-    .catch(err => {
-        console.log("Error Reading data " + err);
-});
+    
+    // call api and return json promises ( current day )
+    function getResults (query) {
+      fetch(`${api.base}weather?q=${query}&units=imperial&APPID=${api.key}`)
+        .then(weather => {
+          return weather.json();
+        }).then(displayResults);
+        console.log(query); // log api data for ciy 
+       
+      }
 
-// --------------------------------------------------------------------
+    //  // catch error if no value returned 
+    //  .catch(err => alert("No city entered, or misspelled. Please try again."));
+    // }
+  
 
-// set browser to open with last searched city's data using localstorage memory
+    // Add 5 day for loop
 
-// create an onclick function which clears localstorage (clear history)
-  $("#clearHistory").on("click", () => {
-    localStorage.clear();
-  });
+    // import { forecastDay, list } from './js/api.js';
+    // var url = "api.js";
 
-// need to declare a variable for recent search
-  let recentSearchOption = "";
+    // $.getScript(url, function(){
+    //   $(document).ready(function()
 
-// need to give newly created recent searches onclick function
-//   $("#recentSearchOption").on("click", () => {});
-// });
+
+     // Display Results in HTMl
+     
+     function displayResults (weather) {
+
+         // pull icons from openweather
+        let iconSet = document.querySelector('.icon');
+        // icon.innerHTML = `<img src='https://openweathermap.org/img/w/"${data.weather[0]}.png">`;
+        console.log(iconSet); 
+        
+        let city = document.querySelector('.location .city');
+        city.innerText = `${weather.name}, ${weather.sys.country}`;
+        console.log(city);
+      
+        let now = new Date();
+        let date = document.querySelector('.location .date');
+        date.innerText = dateBuilder(now);
+        console.log(date);
+      
+        let temp = document.querySelector('.current .temp');
+        temp.innerHTML = `${Math.round(weather.main.temp)}<span>°F</span>`;
+        console.log(temp);
+
+        let weather_el = document.querySelector('.current .weather');
+        weather_el.innerText = weather.weather[0].main;
+        console.log(weather_el);
+
+        let hilow = document.querySelector('.high-low');
+        hilow.innerText = `${Math.round(weather.main.temp_min)}°F / ${Math.round(weather.main.temp_max)}°F`;
+        console.log(hilow);
+     }
+
+    // add current date
+
+    function dateBuilder (d) {
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      
+        let date = d.getDate();
+        let month = months[d.getMonth()];
+        let year = d.getFullYear();
+      
+        return `${month}, ${date} ${year}`;
+      }
+
+      // localStorage setup 
+      // Finish Local Storage setup
+            
+        let saveUserInput = {
+          // example {'city', Phoenix}
+          city: 'Phoenix',
+      };
+
+      let userValue = JSON.stringify(saveUserInput);
+
+      // let userConverted = JSON.parse(localStorage.getItem(userValue));
+
+      localStorage.setItem('City', userValue)
+      console.log(localStorage);
+
+    });
